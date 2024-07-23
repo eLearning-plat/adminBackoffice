@@ -1,5 +1,4 @@
-<script setup lang="ts">
-import { Button } from "@/components/ui/button";
+<script setup lang="js">
 import AppBar from "@/components/app-bar/AppBar.vue";
 import SideBar from "@/components/side-bar/SideBar.vue";
 </script>
