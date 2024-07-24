@@ -25,6 +25,8 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import UsersTable from "@/components/users/users-table/UsersTable.vue";
 import CoursesToolbar from "@/components/courses/courses-toolbar/CoursesToolbar.vue";
 import BreadCrumb from "../../components/bread-crumb/BreadCrumb.vue";
+import { Switch } from "../../components/ui/switch";
+import { Label } from "../../components/ui/label";
 
 const links = [
   { id: 1, title: "Management", link: "/" },
@@ -49,6 +51,7 @@ const page = "Courses";
             placeholder="Search..."
             class="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[320px]"
           />
+          
         </div>
       </header>
       <main class="grid flex-1 items-start pb-36 gap-4 p-4 sm:px-6 md:gap-8">

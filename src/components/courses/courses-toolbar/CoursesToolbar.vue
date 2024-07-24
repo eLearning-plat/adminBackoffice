@@ -22,10 +22,18 @@ import {
 
 import { Tabs, TabsList, TabsTrigger } from "../../ui/tabs";
 import CoursesTable from "../courses-table/CoursesTable.vue";
+import { Switch } from "../../ui/switch";
+import { Label } from "../../ui/label";
+import { ref } from "vue";
 // import UsersTable from "./../users-table/UsersTable.vue";
 
-const filter =["all", "students", "teachers", "admins"];
+const filter = ["all", "students", "teachers", "admins"];
 
+const isOn = ref(false);
+
+const checkAirplaneMode = () => {
+  console.log(isOn);
+};
 </script>
 
 <template>
@@ -57,6 +65,8 @@ const filter =["all", "students", "teachers", "admins"];
             <DropdownMenuItem> My Courses </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+        <Switch id="airplane-mode" :checked="isOn" @update:checked="isOn = $event" />
+        <Label>Switch State: {{ isOn ? 'On' : 'Off' }}</Label>
         <Button size="sm" class="h-7 gap-1">
           <PlusCircle class="h-3.5 w-3.5" />
           <span class="sr-only sm:not-sr-only sm:whitespace-nowrap">
@@ -65,9 +75,10 @@ const filter =["all", "students", "teachers", "admins"];
         </Button>
       </div>
     </div>
-    <CoursesTable :filter="'all'"/>
-    <CoursesTable :filter="'verified'"/>
-    <CoursesTable :filter="'not-verified'"/>
-    <CoursesTable :filter="'my-courses'"/>
+    
+    <CoursesTable v-if="isOn" :filter="'all'" />
+    <CoursesTable v-if="isOn" :filter="'verified'" />
+    <CoursesTable v-if="isOn" :filter="'not-verified'" />
+    <CoursesTable v-if="isOn" :filter="'my-courses'" />
   </Tabs>
 </template>

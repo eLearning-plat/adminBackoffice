@@ -23,6 +23,14 @@ const router = createRouter({
       component: () =>
         import("../pages/courses/course-details/CourseDetails.vue"),
     },
+    {
+      path: "/blog",
+      component: () => import("../pages/blog/Blog.vue"),
+    },
+    {
+      path: "/blog/create-blog",
+      component: () => import("../pages/blog/create-blog/CreateBlog.vue"),
+    }
   ],
 });
 
