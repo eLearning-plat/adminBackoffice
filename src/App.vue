@@ -4,7 +4,7 @@ import SideBar from "@/components/side-bar/SideBar.vue";
 </script>
 
 <template>
-  <div class="flex flex-col h-screen overflow-hidden">
+  <div class="flex flex-col h-screen">
     <AppBar />
     <div class="flex flex-row w-full" :style="{ height: 'calc(100vh - 64px)' }">
       <div class="hidden sm:block">
@@ -14,3 +14,9 @@ import SideBar from "@/components/side-bar/SideBar.vue";
     </div>
   </div>
 </template>
+
+<style>
+body {
+  overflow-y: hidden;
+}
+</style>
