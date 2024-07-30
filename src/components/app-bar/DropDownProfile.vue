@@ -8,6 +8,20 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
+import { useAuth0 } from "@auth0/auth0-vue";
+import { Button } from "../ui/button";
+
+const auth0 = useAuth0();
+const user = auth0.user;
+const isAuthenticated = auth0.isAuthenticated;
+
+function logout() {
+  auth0.logout({
+    logoutParams: {
+      returnTo: window.location.origin,
+    },
+  });
+}
 </script>
 
 <template>
@@ -57,13 +71,14 @@ import {
           >
         </MenuItem>
         <MenuItem v-slot="{ active }">
-          <a
-            href="#"
+          <Button
+            @click="logout"
             :class="[
               active ? 'bg-gray-100' : '',
-              'block px-4 py-2 text-sm text-gray-700',
+              'w-full text-start block px-4 py-2 text-sm text-gray-700',
             ]"
-            >Sign out</a
+            variant="Gost"
+            >Sign out</Button
           >
         </MenuItem>
       </MenuItems>
