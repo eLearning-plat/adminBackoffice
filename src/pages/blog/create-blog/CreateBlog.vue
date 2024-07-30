@@ -123,7 +123,7 @@ const checkAirplaneMode = () => {
               <template v-else-if="field.type === 'text'">
                 <p>{{ field.value }}</p>
               </template>
-              <template v-else-if="field.type === 'image'" class="flex mx-auto ">
+              <template v-else-if="field.type === 'image'" class="flex mx-auto ">k
                 <img :src="field.value" alt="image" class="h-96 w-50"/>
               </template>
             </div>
