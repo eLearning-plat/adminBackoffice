@@ -1,6 +1,6 @@
 <script setup lang="js">
 import { ListFilter, PlusCircle, Search } from "lucide-vue-next";
-import { Button } from "../components/ui/button";
+import { Button } from "@/components/ui/button";
 
 import {
   DropdownMenu,
@@ -9,8 +9,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../components/ui/dropdown-menu";
-import { Input } from "../components/ui/input";
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -18,19 +18,21 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "../components/ui/breadcrumb";
+} from "@/components/ui/breadcrumb";
 
-import { Tabs, TabsList, TabsTrigger } from "../components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import UsersTable from "../components/users/users-table/UsersTable.vue";
-import UsersToolbar from "../components/users/users-toolbar/UsersToolbar.vue";
-import BreadCrumb from "../components/bread-crumb/BreadCrumb.vue";
+import UsersTable from "@/components/users/users-table/UsersTable.vue";
+import CoursesToolbar from "@/components/courses/courses-toolbar/CoursesToolbar.vue";
+import BreadCrumb from "../../components/bread-crumb/BreadCrumb.vue";
+import { Switch } from "../../components/ui/switch";
+import { Label } from "../../components/ui/label";
 
 const links = [
-  { id: 1, title: "Management", link: "" },
+  { id: 1, title: "Management", link: "/" },
 ];
 
-const page = "Users";
+const page = "Courses";
 </script>
 
 <template>
@@ -49,10 +51,11 @@ const page = "Users";
             placeholder="Search..."
             class="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[320px]"
           />
+          
         </div>
       </header>
       <main class="grid flex-1 items-start pb-36 gap-4 p-4 sm:px-6 md:gap-8">
-        <UsersToolbar />
+        <CoursesToolbar />
       </main>
     </div>
   </div>

@@ -1,4 +1,7 @@
 <script setup lang="js">
+import AreaChart from '@/components/chart/AreaChart.vue';
+import LineChart from '@/components/chart/LineChart.vue';
+import BarChart  from '@/components/chart/BarChart.vue';
 import {
   ArrowUpRight,
   Package2,
@@ -53,7 +56,7 @@ const data = [
 </script>
 
 <template>
-  <div class="flex min-h-screen w-full flex-col">
+  <div class="flex min-h-screen w-full pb-20 flex-col">
     <header
       class="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6"
     >
@@ -98,10 +101,29 @@ const data = [
           :description="card.description"
         />
       </div>
+      <div class="flex flex-wrap gap-4 ">
+    <Card class="flex-1 min-w-[300px] ">
+      <CardHeader class="font-bold">
+        Annual Distribution of Meetings and Courses
+       </CardHeader>
+        <CardContent class="px-0"> <AreaChart /></CardContent>
+    </Card>
+    <Card class="flex-1 min-w-[300px]">
+      <CardHeader class="font-bold"> Blog Posts and Reactions Overview</CardHeader>
+      <CardContent class="px-0"><LineChart /> </CardContent>
+    </Card>
+  </div>
       <div class="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
         <UnverifiedCoursesTable/>
         <ResentAddedUsers/>
       </div>
+      <Card>
+        <CardHeader class="flex flex-row items-center justify-between space-y-0 pb-2 font-bold">
+          Annual Breakdown of Course Categories by Type
+     
+        </CardHeader>
+        <CardContent class="px-0"> <BarChart/></CardContent>
+      </Card>
     </main>
   </div>
 </template>

@@ -85,14 +85,6 @@ const data = [
     totalSales: 30,
     createdAt: "2024-02-14 02:14 PM",
   },
-  {
-    img: "@/assets/vue.svg",
-    name: "Luminous VR Headset",
-    status: "Active",
-    price: "$199.99",
-    totalSales: 30,
-    createdAt: "2024-02-14 02:14 PM",
-  },
 ];
 </script>
 
@@ -100,8 +92,8 @@ const data = [
   <TabsContent :value="filter">
     <Card>
       <CardHeader>
-        <CardTitle>Users</CardTitle>
-        <CardDescription> Manage your users. </CardDescription>
+        <CardTitle>Courses</CardTitle>
+        <CardDescription> Manage Courses. </CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
@@ -110,8 +102,9 @@ const data = [
               <TableHead class="hidden w-[100px] sm:table-cell">
                 <span class="sr-only">img</span>
               </TableHead>
-              <TableHead>Name</TableHead>
-              <TableHead>Role</TableHead>
+              <TableHead>Course</TableHead>
+              <TableHead>Satuts</TableHead>
+              <TableHead>Created by</TableHead>
               <TableHead class="hidden md:table-cell"> Created at </TableHead>
               <TableHead>
                 <span class="sr-only">Actions</span>
@@ -133,10 +126,13 @@ const data = [
                 {{ element.name }}
               </TableCell>
               <TableCell>
-                        <Badge variant="outline">
-                          {{ element.status }}
-                        </Badge>
-                      </TableCell>
+                <Badge variant="outline">
+                  {{ element.status }}
+                </Badge>
+              </TableCell>
+              <TableCell>
+                {{ element.totalSales }}  
+              </TableCell>
               <TableCell class="hidden md:table-cell">
                 {{ element.createdAt }}
               </TableCell>
@@ -152,6 +148,7 @@ const data = [
                     <DropdownMenuLabel>Actions</DropdownMenuLabel>
                     <DropdownMenuItem>Edit</DropdownMenuItem>
                     <DropdownMenuItem>Delete</DropdownMenuItem>
+                    <DropdownMenuItem>View details</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </TableCell>
