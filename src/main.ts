@@ -1,6 +1,8 @@
 import { createApp } from "vue";
 import "./assets/index.css";
+//@ts-expect-error
 import router from "./router";
+//@ts-expect-error
 import App from "./App.vue";
 import { createAuth0 } from "@auth0/auth0-vue";
 
