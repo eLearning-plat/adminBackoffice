@@ -69,7 +69,7 @@ const totalValue = computed(() => props.data.reduce((prev, curr) => {
         :value-formatter="valueFormatter"
         :custom-tooltip="customTooltip"
       />
-
+      <!-- @vue-ignore -->
       <VisDonut
         :value="(d: Data) => d[category]"
         :sort-function="sortFunction"
