@@ -12,6 +12,11 @@ export default defineConfig({
     },
   },
   plugins: [vue()],
+  server:{
+    host:'localhost',
+    port: 3001,
+    open:true
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
