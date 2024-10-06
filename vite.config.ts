@@ -12,10 +12,10 @@ export default defineConfig({
     },
   },
   plugins: [vue()],
-  server: {
-    host: 'localhost', 
-    port: 3001,        
-    open: true         
+  server:{
+    host:'localhost',
+    port: 3001,
+    open:true
   },
   resolve: {
     alias: {
