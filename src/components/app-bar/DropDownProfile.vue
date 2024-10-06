@@ -12,8 +12,9 @@ import { useAuth0 } from "@auth0/auth0-vue";
 import { Button } from "../ui/button";
 
 const auth0 = useAuth0();
-
 const apiUrl = import.meta.env.VITE_APP_API_URL_LOCAL;
+const user = auth0.user;
+const isAuthenticated = auth0.isAuthenticated;
 
 function logout() {
   auth0.logout({
@@ -22,7 +23,6 @@ function logout() {
     },
   });
 }
-
 </script>
 
 <template>
@@ -77,7 +77,7 @@ function logout() {
             :href="apiUrl"
             :class="[
               active ? 'bg-gray-100' : '',
-              'block px-4 py-2 text-sm text-gray-700',
+              'w-full text-start block px-4 py-2 text-sm text-gray-700',
             ]"
             >Sign out</a>
         </MenuItem>
